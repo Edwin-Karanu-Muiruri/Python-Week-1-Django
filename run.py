@@ -94,7 +94,7 @@ def main():
                 break
 
         else:
-                print("Please use the short codes provided")    
+            print("Please use the short codes provided")    
 
 
 if  __name__ == '__main__':
