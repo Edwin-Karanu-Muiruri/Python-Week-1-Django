@@ -4,10 +4,9 @@ class User:
     the username and their password. Credentials shall also be saved under a user's information
     '''
     user_list = [] #list to store our users
-    def __init__(self,user_name,login_password,credentials):
+    def __init__(self,user_name,login_password):
         self.user_name = user_name
         self.login_password = login_password
-        self.credentials = credentials
 
     def save_user(self):
         User.user_list.append(self)
