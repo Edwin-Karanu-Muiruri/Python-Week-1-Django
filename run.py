@@ -70,22 +70,24 @@ def main():
             print ('\n')
 
         elif short_code == 'dc':
-                print("These are the available credentials under your account")
-                print('\n')
+            print("These are the available credentials under your account")
+            print('\n')
 
-                for credentials in Credentials.display_credentials():
-                    print(f" Application name: {credentials.application_name}\n Username: {credentials.username} \n Password: {credentials.password}")
-                    print('\n')
-                    print('\n')
-                else:
-                    print("There are no saved credentials for this account")
+            for credentials in Credentials.display_credentials():
+                print(f" Application name: {application_name}\n Username: {username} \n Password: {password}")
+                print('\n')
+                print('\n')
+                break
+            else:
+                print("There are no saved credentials for this account")
 
 
         elif short_code == "xc":
             print("Which application details would you like to delete?")
             deleteCredentials = input()
             if deleteCredentials == application_name:
-                delete_credentials(Credentials)
+                delete_credentials(credentials)
+                print("Credentials deleted")
             elif deleteCredentials != application_name:
                 print("Sorry, no application credentials matches that name")
 
