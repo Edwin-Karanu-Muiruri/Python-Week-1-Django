@@ -52,7 +52,7 @@ def main():
             answer = input().lower()
             if answer =='y':
                 chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@£$%^&*().,?0123456789'
-                number = 1
+                number = 0
                 length = input('password length?')
                 length = int(length)
                 for password in range(number):
@@ -73,10 +73,12 @@ def main():
                 print("These are the available credentials under your account")
                 print('\n')
 
-                for Credentials in Credentials.display_credentials():
-                    print(f" Application name: {Credentials.application_name}\n Username: {Credentials.username} \n Password: {Credentials.password}")
+                for credentials in Credentials.display_credentials():
+                    print(f" Application name: {credentials.application_name}\n Username: {credentials.username} \n Password: {credentials.password}")
                     print('\n')
                     print('\n')
+                else:
+                    print("There are no saved credentials for this account")
 
 
         elif short_code == "xc":
@@ -84,9 +86,8 @@ def main():
             deleteCredentials = input()
             if deleteCredentials == application_name:
                 delete_credentials(Credentials)
-
-            else:
-                print("Sorry, no account matches that name")
+            elif deleteCredentials != application_name:
+                print("Sorry, no application credentials matches that name")
 
         elif short_code == "cls":
                 print("Password locker, Security you can trust!")
