@@ -54,19 +54,19 @@ def main():
                 chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@£$%^&*().,?0123456789'
                 number = 0
                 length = input('password length?')
-                length = int(length)
+                plength = int(length)
+                password = ''
                 for password in range(number):
-                    password = ''
-                    for chars in range(length):
+                    for chars in range(plength):
                         password =+ random.choice(chars)
-
+                    break
             elif answer == 'n':
                 print("Input Account password of your choice")
                 password = input()
 
             save_credentials(create_credentials(application_name,username,password))
             print ('\n')
-            print(f"New Credentials for {application_name}, user {username} have been created")
+            print(f"New Credentials for {application_name}, user {username}, have been created")
             print ('\n')
 
         elif short_code == 'dc':
